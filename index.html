@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table's Project</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="controller.js"></script>
+</head>
+
+
+<body>
+<header>
+    <h1>Jenn's Table's</h1>
+</header>
+
+<div ng-app="myApp" ng-controller="mainController">
+    <h1>{{ title }}</h1>
+
+    <table border="1" width="100%">
+        <tr>
+            <th ng-click="orderByMe('Kingdom')">Kingdom</th>
+            <th ng-click="orderByMe('Phylum')">Phylum</th>
+            <th ng-click="orderByMe('Class')">Class</th>
+            <th ng-click="orderByMe('Order')">Order</th>
+            <th ng-click="orderByMe('Family')">Family</th>
+            <th ng-click="orderByMe('Genus')">Genus</th>
+            <th ng-click="orderByMe('Species')">Species</th>
+        </tr>
+        <tr ng-repeat="x in animals | orderBy:myOrderBy">
+            <td>{{x.Kingdom}}</td>
+            <td>{{x.Phylum}}</td>
+            <td>{{x.Class}}</td>
+            <td>{{x.Order}}</td>
+            <td>{{x.Family}}</td>
+            <td>{{x.Genus}}</td>
+            <td>{{x.Species}}</td>
+    </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
